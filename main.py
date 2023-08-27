@@ -1,7 +1,11 @@
+"""
+Pursuit Helloworld
+"""
 import game
 
 
 def show_simple_addition(first, second):
+    """This method just does some simple addition"""
     total = first + second
     print(f"The total sum of {first} and {second} is {total}")
 
