@@ -1,29 +1,47 @@
 """
 Pursuit Helloworld
+
+This exercise is copied from https://github.com/SmallLion/Python-Projects/blob/main/word_game
 """
-import game
+import random
 
 
-def show_simple_addition(first, second):
-    """This method just does some simple addition"""
-    total = first + second
-    print(f"The total sum of {first} and {second} is {total}")
+lives = 3
+
+words = ['pizza', 'fairy', 'teeth', 'shirt', 'otter', 'plane']
+secret_word = random.choice(words)
+
+clue = list('?????')
+heart_symbol = u'\u2764'
+
+guessed_word_correctly = False
 
 
-print('This is just showing a message on the command line')
+def update_clue(guessed_letter, secret_word, clue):
+    index = 0
+    while index < len(secret_word):
+        if guessed_letter == secret_word[index]:
+            clue[index] = guessed_letter
+        index = index + 1
 
-show_simple_addition(15668, 15669)
 
-# This is a comment since the line starts with #
-# The definition of "game" comes from  importing the game file above
-# where you see 'import game'
-world = game.World()
+while lives > 0:
+    print(clue)
+    print('Lives left: ' + heart_symbol * lives)
+    guess = input('Guess a letter or the whole word: ')
 
-# len is a method that you can use to get the length of an array, object, etc.
-number_of_characters = len(world.characters)
-print(f"There are currently {number_of_characters} characters in the world")
+    if guess == secret_word:
+        guessed_word_correctly = True
+        break
 
-# you can append / add things to an array
-world.characters.append("tank1")
-number_of_characters = len(world.characters)
-print(f"Now there are {number_of_characters} characters in the world")
+    if guess in secret_word:
+        update_clue(guess, secret_word, clue)
+    else:
+        print('Incorrect. You lose a life')
+        lives = lives - 1
+
+if guessed_word_correctly:
+    print('You won! The secret word was ' + secret_word)
+else:
+    print('You lost! The secret word was ' + secret_word)
+
