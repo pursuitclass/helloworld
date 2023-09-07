@@ -8,7 +8,7 @@ import random
 
 lives = 3
 
-words = ['pizza', 'fairy', 'teeth', 'shirt', 'otter', 'plane']
+words = ['pizza', 'fairy', 'teeth', 'shirt', 'otter', 'plane', 'train']
 secret_word = random.choice(words)
 
 clue = list('?????')
