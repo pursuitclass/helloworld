@@ -6,13 +6,14 @@ This exercise is copied from https://github.com/SmallLion/Python-Projects/blob/m
 import random
 
 
-lives = 3
+lives = 100
 
-words = ['pizza', 'fairy', 'teeth', 'shirt', 'otter', 'plane', 'train', 'super']
+words = ['pizza', 'fairy', 'teeth', 'sword', 'otter', 'plane', 'train', 'super']
+
 secret_word = random.choice(words)
 
 clue = list('?????')
-heart_symbol = u'\u2764'
+sword_symbol = u'\u2694'
 
 guessed_word_correctly = False
 
@@ -29,7 +30,7 @@ def update_clue(guessed_letter, secret_word, clue):
 # A while clause will continue executing until the condition is true.
 while lives > 0:
     print(clue)
-    print('Lives left: ' + heart_symbol * lives)
+    print('Lives left: ' + sword_symbol * lives)
     guess = input('Guess a letter or the whole word: ')
 
     if guess == secret_word:
