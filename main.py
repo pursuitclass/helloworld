@@ -9,10 +9,17 @@ def show_simple_addition(first, second):
     total = first + second
     print(f"The total sum of {first} and {second} is {total}")
 
+def show_simple_subtraction(first, second):
+    """This method just does some simple addition"""
+    total = first - second
+    print(f"The total differents  of {first} and {second} is {total}")
+
 
 print('This is just showing a message on the command line')
 
 show_simple_addition(15668, 15669)
+show_simple_subtraction(53655,78389
+                        )
 
 # This is a comment since the line starts with #
 # The definition of "game" comes from  importing the game file above
